@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="laptop_store.Laptop"/>
+    <fullyQualifiedTypeName name="phone_store.Phone"/>
+    <fullyQualifiedTypeName name="com.mtit.communicationcenter.ServicesImpl2"/>
+    <fullyQualifiedTypeName name="labtop_repairing_service.LaptopModel"/>
+    <fullyQualifiedTypeName name="phone_repairing_service.Phone_Repairing_Model"/>
+    <fullyQualifiedTypeName name="com.mtit.communicationcenter.ServicesImpl3"/>
+    <fullyQualifiedTypeName name="labtop_repairing_service.Labtop_Repairing"/>
+    <fullyQualifiedTypeName name="phone_repairing_service.Phone_Repairing"/>
+</qualifiedTypeNameHistroy>

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;scanner_service.Scanner&apos; to &apos;ScannerI&apos;&#x0D;&#x0A;- Original project: &apos;Scanner_Service&apos;&#x0D;&#x0A;- Original element: &apos;scanner_service.Scanner&apos;&#x0D;&#x0A;- Renamed element: &apos;scanner_service.ScannerI&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;Scanner&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;scanner_service{Scanner.java[Scanner" matchStrategy="1" name="ScannerI" qualified="false" references="true" similarDeclarations="false" stamp="1646679625162" textual="false" version="1.0"/>
+</session>

@@ -1,0 +1,490 @@
+package com.mtit.communicationcenter;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+import com.mtit.stationary_service.StationaryModel;
+
+import laptop_store.Laptop;
+import laptop_store.Laptop_Model;
+import phone_store.Phone;
+import phone_store.Phone_Model;
+import reload_service.Reload;
+import reload_service.ReloadModel;
+
+public class ServicesImpl2 {
+	
+	private static int PhoneSubTotal = 0;
+	private static int LaptopSubTotal = 0;
+	private static int totalAmount = 0;
+	private static String Phone_desision;
+	private static String Laptop_desision;
+	private static int Services2[] = new int[2];
+	
+	private static ArrayList<Laptop_Model> laptops = new ArrayList<>();
+	private static ArrayList<Phone_Model> phones = new ArrayList<>();
+	
+	public static int chooseServiceType2() {
+		System.out.println();
+		System.out.println();
+		System.out.println("____________________________________________________________________________________________________________________________________________________________");
+		System.out.println();
+		System.out.println("\t\t\t___________________________________________________________");
+		System.out.println("\t\t\t|\t\t\t\t\t\t\t   |");
+		System.out.println("\t\t\t|\t---- OSGI Communication Center ----\t\t   | ");
+		System.out.println("\t\t\t|__________________________________________________________|");
+		System.out.println();
+		System.out.println();
+		System.out.println("\t\t\t\t________________________________________");
+		
+		System.out.println("\t\t\t\t|code\t\tService\t\t        |");
+		System.out.println("\t\t\t\t________________________________________");
+		System.out.println();
+		System.out.println("\t\t\t\t| 1\tLaptop Store Service\t\t|");
+		System.out.println("\t\t\t\t| 2\tPhone Store Service \t\t\t|");
+		
+		System.out.println("\t\t\t\t________________________________________");
+		
+		System.out.println();
+		System.out.println();
+		Scanner input = new Scanner(System.in);
+		System.out.print("\t\t\t => Enter the code of the service you need to Procead : ");
+		int x = input.nextInt();
+		
+		return x;
+	
+
+}
+	
+	public static void LaptopService(Laptop laptop) {
+		Scanner input = new Scanner(System.in);
+		if(Services2[0] != 0) {
+			totalAmount = Services2[0];
+		}else {
+			totalAmount = 0;
+		}
+
+		do {
+			laptop.Display_Laptop();;
+			System.out.println();
+			System.out.println();
+			System.out.print("\t\t\t=>Enter the code of Laptop Type  you need to Purchase ? ");
+			int laptop_code = input.nextInt();
+			
+			if(laptop_code  == 1) {
+				laptop.Display_Apple();
+				System.out.println();
+				System.out.println();
+				System.out.print("\t\t\t=>Enter the code of laptop Type  you need to Purchase ? ");
+				int laptop_code1 = input.nextInt();
+				
+				if(laptop_code1 == 1) {
+					
+					Laptop_Model laptopmodel = new Laptop_Model();
+					
+					
+					laptopmodel.setName("Macbook Pro");
+					System.out.print("\t\t\t=>How many Macbook Pro do you need to purchase ?");
+					int Qty = input.nextInt();
+					laptopmodel.setQty(Qty);
+					LaptopSubTotal = laptop.calculateBill(Qty, laptop.Macbookpro);
+					double calculateamount = (double)LaptopSubTotal;
+					laptopmodel.setSubTotal(calculateamount);
+					laptops.add(laptopmodel);
+					totalAmount += LaptopSubTotal;
+					
+				}else if(laptop_code1 == 2) {
+					Laptop_Model laptopmodel = new Laptop_Model();
+					
+					
+					laptopmodel.setName("Macbook Air");
+					System.out.print("\t\t\t=>How many Macbook Air do you need to purchase ?");
+					int Qty = input.nextInt();
+					laptopmodel.setQty(Qty);
+					LaptopSubTotal = laptop.calculateBill(Qty, laptop.macbookair);
+					double calculateamount = (double)LaptopSubTotal;
+					laptopmodel.setSubTotal(calculateamount);
+					laptops.add(laptopmodel);
+					totalAmount += LaptopSubTotal;
+					
+				}else {
+					   System.out.println("\t\t\t=>Please enter a valied code ....");
+				}
+				
+			}else if(laptop_code  == 2) {
+				
+				laptop.Display_Dell();;
+				System.out.println();
+				System.out.println();
+				System.out.print("\t\t\t=>Enter the code of laptop Type  you need to Purchase ? ");
+				int laptop_code2 = input.nextInt();
+				
+				if(laptop_code2 == 1) {
+					
+					Laptop_Model laptopmodel = new Laptop_Model();
+					
+					
+					laptopmodel.setName("Dell latitute");
+					System.out.print("\t\t\t=>How many Dell latitute do you need to purchase ?");
+					int Qty = input.nextInt();
+					laptopmodel.setQty(Qty);
+					LaptopSubTotal = laptop.calculateBill(Qty, laptop.Dell_latitute);
+					double calculateamount = (double)LaptopSubTotal;
+					laptopmodel.setSubTotal(calculateamount);
+					laptops.add(laptopmodel);
+					totalAmount += LaptopSubTotal;
+					
+				}else if(laptop_code2 == 2) {
+					Laptop_Model laptopmodel = new Laptop_Model();
+					
+					
+					laptopmodel.setName("Dell inspiron");
+					System.out.print("\t\t\t=>How many Dell inspiron do you need to purchase ?");
+					int Qty = input.nextInt();
+					laptopmodel.setQty(Qty);
+					LaptopSubTotal = laptop.calculateBill(Qty, laptop.Dell_inspiron);
+					double calculateamount = (double)LaptopSubTotal;
+					laptopmodel.setSubTotal(calculateamount);
+					laptops.add(laptopmodel);
+					totalAmount += LaptopSubTotal;
+					
+				}else if(laptop_code2 == 3) {
+					Laptop_Model laptopmodel = new Laptop_Model();
+					
+					
+					laptopmodel.setName("Dell alionware");
+					System.out.print("\t\t\t=>How many Dell alionware do you need to purchase ?");
+					int Qty = input.nextInt();
+					laptopmodel.setQty(Qty);
+					LaptopSubTotal = laptop.calculateBill(Qty, laptop.Dell_alionware);
+					double calculateamount = (double)LaptopSubTotal;
+					laptopmodel.setSubTotal(calculateamount);
+					laptops.add(laptopmodel);
+					totalAmount += LaptopSubTotal;
+					
+				
+					
+				}else {
+					   System.out.println("\t\t\t=>Please enter a valied code ....");
+				}
+				
+					
+			}else if(laptop_code  == 3) {
+				laptop.Display_Asus();;
+				System.out.println();
+				System.out.println();
+				System.out.print("\t\t\t=>Enter the code of laptop Type  you need to Purchase ? ");
+				int laptop_code3 = input.nextInt();
+				
+				if(laptop_code3 == 1) {
+					
+					Laptop_Model laptopmodel = new Laptop_Model();
+					
+					
+					laptopmodel.setName("Asus rog");
+					System.out.print("\t\t\t=>How many Asus rog do you need to purchase ?");
+					int Qty = input.nextInt();
+					laptopmodel.setQty(Qty);
+					LaptopSubTotal = laptop.calculateBill(Qty, laptop.Asus_rog);
+					double calculateamount = (double)LaptopSubTotal;
+					laptopmodel.setSubTotal(calculateamount);
+					laptops.add(laptopmodel);
+					totalAmount += LaptopSubTotal;
+					
+				}else if(laptop_code3 == 2) {
+					Laptop_Model laptopmodel = new Laptop_Model();
+					
+					
+					laptopmodel.setName("Asus vivobook");
+					System.out.print("\t\t\t=>How many Asus vivobook do you need to purchase ?");
+					int Qty = input.nextInt();
+					laptopmodel.setQty(Qty);
+					LaptopSubTotal = laptop.calculateBill(Qty, laptop.Asus_vivobook);
+					double calculateamount = (double)LaptopSubTotal;
+					laptopmodel.setSubTotal(calculateamount);
+					laptops.add(laptopmodel);
+					totalAmount += LaptopSubTotal;
+					
+				}else if(laptop_code3 == 3) {
+					Laptop_Model laptopmodel = new Laptop_Model();
+					
+					
+					laptopmodel.setName("Asus notebook");
+					System.out.print("\t\t\t=>How many Asus notebook do you need to purchase ?");
+					int Qty = input.nextInt();
+					laptopmodel.setQty(Qty);
+					LaptopSubTotal = laptop.calculateBill(Qty, laptop.Asus_notebook);
+					double calculateamount = (double)LaptopSubTotal;
+					laptopmodel.setSubTotal(calculateamount);
+					laptops.add(laptopmodel);
+					totalAmount += LaptopSubTotal;
+					
+				
+					
+				}else {
+					   System.out.println("\t\t\t=>Please enter a valied code ....");
+				}
+				
+				
+				
+			} else {
+				   System.out.println("\t\t\t=>Please enter a valied code ....");
+			   }
+			
+			System.out.println();
+			System.out.println("\t\t\t  *** Please enter [Y] if 'yes' and [N] if 'No' ***");
+			System.out.print("\t\t\t=>Do you need to perchse more items ? [Y/N] ");
+			Laptop_desision = input.next();
+			
+		}while(Laptop_desision.equals("Y"));
+		System.out.println();
+		System.out.println();
+		System.out.println("\t\t\t\tLaptop Service Bill Amount : ");
+		System.out.println();
+		System.out.println("\t\t\t\t__________________________________________________________");
+		System.out.println("\t\t\t\tLaptopType\t\tQuantity\t\t Amount");
+		System.out.println("\t\t\t\t__________________________________________________________");
+		System.out.println();
+		
+		for(Laptop_Model laptopmodel : laptops ) {
+			
+				System.out.print("\t\t\t\t"+ laptopmodel.getName());
+			
+				System.out.print("\t\t"+ laptopmodel.getQty());
+			
+				System.out.print("\t\t "+ laptopmodel.getSubTotal());
+				System.out.println();
+			
+			
+			
+		}
+		
+		System.out.println();
+		System.out.println("\t\t\t\t__________________________________________________________");
+		System.out.println("\t\t\t\t\t\t\t\t   SubToatal is : "+(double)totalAmount);
+		System.out.println("\t\t\t\t__________________________________________________________");
+		System.out.println();
+		
+		Services2[0] = totalAmount;
+		
+		
+		
+}
+	
+	
+	public static void PhoneService(Phone phone) {
+		Scanner input = new Scanner(System.in);
+		if(Services2[1] != 0) {
+			totalAmount = Services2[1];
+		}else {
+			totalAmount = 0;
+		}
+
+		do {
+			laptop.Display_Laptop();;
+			System.out.println();
+			System.out.println();
+			System.out.print("\t\t\t=>Enter the code of Laptop Type  you need to Purchase ? ");
+			int laptop_code = input.nextInt();
+			
+			if(laptop_code  == 1) {
+				laptop.Display_Apple();
+				System.out.println();
+				System.out.println();
+				System.out.print("\t\t\t=>Enter the code of laptop Type  you need to Purchase ? ");
+				int laptop_code1 = input.nextInt();
+				
+				if(laptop_code1 == 1) {
+					
+					Laptop_Model laptopmodel = new Laptop_Model();
+					
+					
+					laptopmodel.setName("Macbook Pro");
+					System.out.print("\t\t\t=>How many Macbook Pro do you need to purchase ?");
+					int Qty = input.nextInt();
+					laptopmodel.setQty(Qty);
+					LaptopSubTotal = laptop.calculateBill(Qty, laptop.Macbookpro);
+					double calculateamount = (double)LaptopSubTotal;
+					laptopmodel.setSubTotal(calculateamount);
+					laptops.add(laptopmodel);
+					totalAmount += LaptopSubTotal;
+					
+				}else if(laptop_code1 == 2) {
+					Laptop_Model laptopmodel = new Laptop_Model();
+					
+					
+					laptopmodel.setName("Macbook Air");
+					System.out.print("\t\t\t=>How many Macbook Air do you need to purchase ?");
+					int Qty = input.nextInt();
+					laptopmodel.setQty(Qty);
+					LaptopSubTotal = laptop.calculateBill(Qty, laptop.macbookair);
+					double calculateamount = (double)LaptopSubTotal;
+					laptopmodel.setSubTotal(calculateamount);
+					laptops.add(laptopmodel);
+					totalAmount += LaptopSubTotal;
+					
+				}else {
+					   System.out.println("\t\t\t=>Please enter a valied code ....");
+				}
+				
+			}else if(laptop_code  == 2) {
+				
+				laptop.Display_Dell();;
+				System.out.println();
+				System.out.println();
+				System.out.print("\t\t\t=>Enter the code of laptop Type  you need to Purchase ? ");
+				int laptop_code2 = input.nextInt();
+				
+				if(laptop_code2 == 1) {
+					
+					Laptop_Model laptopmodel = new Laptop_Model();
+					
+					
+					laptopmodel.setName("Dell latitute");
+					System.out.print("\t\t\t=>How many Dell latitute do you need to purchase ?");
+					int Qty = input.nextInt();
+					laptopmodel.setQty(Qty);
+					LaptopSubTotal = laptop.calculateBill(Qty, laptop.Dell_latitute);
+					double calculateamount = (double)LaptopSubTotal;
+					laptopmodel.setSubTotal(calculateamount);
+					laptops.add(laptopmodel);
+					totalAmount += LaptopSubTotal;
+					
+				}else if(laptop_code2 == 2) {
+					Laptop_Model laptopmodel = new Laptop_Model();
+					
+					
+					laptopmodel.setName("Dell inspiron");
+					System.out.print("\t\t\t=>How many Dell inspiron do you need to purchase ?");
+					int Qty = input.nextInt();
+					laptopmodel.setQty(Qty);
+					LaptopSubTotal = laptop.calculateBill(Qty, laptop.Dell_inspiron);
+					double calculateamount = (double)LaptopSubTotal;
+					laptopmodel.setSubTotal(calculateamount);
+					laptops.add(laptopmodel);
+					totalAmount += LaptopSubTotal;
+					
+				}else if(laptop_code2 == 3) {
+					Laptop_Model laptopmodel = new Laptop_Model();
+					
+					
+					laptopmodel.setName("Dell alionware");
+					System.out.print("\t\t\t=>How many Dell alionware do you need to purchase ?");
+					int Qty = input.nextInt();
+					laptopmodel.setQty(Qty);
+					LaptopSubTotal = laptop.calculateBill(Qty, laptop.Dell_alionware);
+					double calculateamount = (double)LaptopSubTotal;
+					laptopmodel.setSubTotal(calculateamount);
+					laptops.add(laptopmodel);
+					totalAmount += LaptopSubTotal;
+					
+				
+					
+				}else {
+					   System.out.println("\t\t\t=>Please enter a valied code ....");
+				}
+				
+					
+			}else if(laptop_code  == 3) {
+				laptop.Display_Asus();;
+				System.out.println();
+				System.out.println();
+				System.out.print("\t\t\t=>Enter the code of laptop Type  you need to Purchase ? ");
+				int laptop_code3 = input.nextInt();
+				
+				if(laptop_code3 == 1) {
+					
+					Laptop_Model laptopmodel = new Laptop_Model();
+					
+					
+					laptopmodel.setName("Asus rog");
+					System.out.print("\t\t\t=>How many Asus rog do you need to purchase ?");
+					int Qty = input.nextInt();
+					laptopmodel.setQty(Qty);
+					LaptopSubTotal = laptop.calculateBill(Qty, laptop.Asus_rog);
+					double calculateamount = (double)LaptopSubTotal;
+					laptopmodel.setSubTotal(calculateamount);
+					laptops.add(laptopmodel);
+					totalAmount += LaptopSubTotal;
+					
+				}else if(laptop_code3 == 2) {
+					Laptop_Model laptopmodel = new Laptop_Model();
+					
+					
+					laptopmodel.setName("Asus vivobook");
+					System.out.print("\t\t\t=>How many Asus vivobook do you need to purchase ?");
+					int Qty = input.nextInt();
+					laptopmodel.setQty(Qty);
+					LaptopSubTotal = laptop.calculateBill(Qty, laptop.Asus_vivobook);
+					double calculateamount = (double)LaptopSubTotal;
+					laptopmodel.setSubTotal(calculateamount);
+					laptops.add(laptopmodel);
+					totalAmount += LaptopSubTotal;
+					
+				}else if(laptop_code3 == 3) {
+					Laptop_Model laptopmodel = new Laptop_Model();
+					
+					
+					laptopmodel.setName("Asus notebook");
+					System.out.print("\t\t\t=>How many Asus notebook do you need to purchase ?");
+					int Qty = input.nextInt();
+					laptopmodel.setQty(Qty);
+					LaptopSubTotal = laptop.calculateBill(Qty, laptop.Asus_notebook);
+					double calculateamount = (double)LaptopSubTotal;
+					laptopmodel.setSubTotal(calculateamount);
+					laptops.add(laptopmodel);
+					totalAmount += LaptopSubTotal;
+					
+				
+					
+				}else {
+					   System.out.println("\t\t\t=>Please enter a valied code ....");
+				}
+				
+				
+				
+			} else {
+				   System.out.println("\t\t\t=>Please enter a valied code ....");
+			   }
+			
+			System.out.println();
+			System.out.println("\t\t\t  *** Please enter [Y] if 'yes' and [N] if 'No' ***");
+			System.out.print("\t\t\t=>Do you need to perchse more items ? [Y/N] ");
+			Laptop_desision = input.next();
+			
+		}while(Laptop_desision.equals("Y"));
+		System.out.println();
+		System.out.println();
+		System.out.println("\t\t\t\tLaptop Service Bill Amount : ");
+		System.out.println();
+		System.out.println("\t\t\t\t__________________________________________________________");
+		System.out.println("\t\t\t\tLaptopType\t\tQuantity\t\t Amount");
+		System.out.println("\t\t\t\t__________________________________________________________");
+		System.out.println();
+		
+		for(Laptop_Model laptopmodel : laptops ) {
+			
+				System.out.print("\t\t\t\t"+ laptopmodel.getName());
+			
+				System.out.print("\t\t"+ laptopmodel.getQty());
+			
+				System.out.print("\t\t "+ laptopmodel.getSubTotal());
+				System.out.println();
+			
+			
+			
+		}
+		
+		System.out.println();
+		System.out.println("\t\t\t\t__________________________________________________________");
+		System.out.println("\t\t\t\t\t\t\t\t   SubToatal is : "+(double)totalAmount);
+		System.out.println("\t\t\t\t__________________________________________________________");
+		System.out.println();
+		
+		Services2[1] = totalAmount;
+		
+		
+		
+}
+
+}

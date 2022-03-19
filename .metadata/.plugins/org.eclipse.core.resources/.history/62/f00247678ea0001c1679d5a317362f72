@@ -1,0 +1,380 @@
+package com.mtit.communicationcenter;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+import com.mtit.stationary_service.StationaryModel;
+
+import laptop_store.Laptop_Model;
+import phone_store.Phone_Model;
+import reload_service.Reload;
+import reload_service.ReloadModel;
+
+public class ServicesImpl2 {
+	
+	private static int PhoneSubTotal = 0;
+	private static int LaptopSubTotal = 0;
+	private static int totalAmount = 0;
+	private static String Phone_desision;
+	private static String Laptop_desision;
+	private static int Services2[] = new int[2];
+	
+	private static ArrayList<Laptop_Model> laptops = new ArrayList<>();
+	private static ArrayList<Phone_Model> phones = new ArrayList<>();
+	
+	public static int chooseServiceType2() {
+		System.out.println();
+		System.out.println();
+		System.out.println("____________________________________________________________________________________________________________________________________________________________");
+		System.out.println();
+		System.out.println("\t\t\t___________________________________________________________");
+		System.out.println("\t\t\t|\t\t\t\t\t\t\t   |");
+		System.out.println("\t\t\t|\t---- OSGI Communication Center ----\t\t   | ");
+		System.out.println("\t\t\t|__________________________________________________________|");
+		System.out.println();
+		System.out.println();
+		System.out.println("\t\t\t\t________________________________________");
+		
+		System.out.println("\t\t\t\t|code\t\tService\t\t        |");
+		System.out.println("\t\t\t\t________________________________________");
+		System.out.println();
+		System.out.println("\t\t\t\t| 1\tLaptop Store Service\t\t|");
+		System.out.println("\t\t\t\t| 2\tPhone Store Service \t\t\t|");
+		
+		System.out.println("\t\t\t\t________________________________________");
+		
+		System.out.println();
+		System.out.println();
+		Scanner input = new Scanner(System.in);
+		System.out.print("\t\t\t => Enter the code of the service you need to Procead : ");
+		int x = input.nextInt();
+		
+		return x;
+	
+
+}
+	
+	public static void ReloadService(Reload reload) {
+		Scanner input = new Scanner(System.in);
+		if(Services[1] != 0) {
+			totalAmount = Services[1];
+		}else {
+			totalAmount = 0;
+		}
+
+		do {
+			reload.DisplayReloadCards();
+			System.out.println();
+			System.out.println();
+			System.out.print("\t\t\t=>Enter the code of ReloadCard Type  you need to Purchase ? ");
+			int reload_code = input.nextInt();
+			
+			if(reload_code  == 1) {
+				reload.DisplayDialogCards();
+				System.out.println();
+				System.out.println();
+				System.out.print("\t\t\t=>Enter the code of ReloadCard Type  you need to Purchase ? ");
+				int reload_code1 = input.nextInt();
+				
+				if(reload_code1 == 1) {
+					
+					ReloadModel reloadmodel = new ReloadModel();
+					
+					
+					reloadmodel.setName("Dialog-ReloadCard-50");
+					System.out.print("\t\t\t=>How many Dialog-ReloadCard-50 do you need to purchase ?");
+					int Qty = input.nextInt();
+					reloadmodel.setQty(Qty);
+					ReloadSubTotal = reload.calculateBill(Qty, reload.reload_50);
+					double calculateamount = (double)ReloadSubTotal;
+					reloadmodel.setSubTotal(calculateamount);
+					Reloadcards.add(reloadmodel);
+					totalAmount += ReloadSubTotal;
+					
+				}else if(reload_code1 == 2) {
+					ReloadModel reloadmodel = new ReloadModel();
+					
+					
+					reloadmodel.setName("Dialog-ReloadCard-100");
+					System.out.print("\t\t\t=>How many Dialog-ReloadCard-100 do you need to purchase ?");
+					int Qty = input.nextInt();
+					reloadmodel.setQty(Qty);
+					ReloadSubTotal = reload.calculateBill(Qty, reload.reload_100);
+					double calculateamount = (double)ReloadSubTotal;
+					reloadmodel.setSubTotal(calculateamount);
+					Reloadcards.add(reloadmodel);
+					totalAmount += ReloadSubTotal;
+					
+				}else if(reload_code1 == 3) {
+					ReloadModel reloadmodel = new ReloadModel();
+					
+					reloadmodel.setName("Dialog-DataCard-49");
+					System.out.print("\t\t\t=>How many Dialog-DataCard-49 do you need to purchase ?");
+					int Qty = input.nextInt();
+					reloadmodel.setQty(Qty);
+					ReloadSubTotal = reload.calculateBill(Qty, reload.reload_49);
+					double calculateamount = (double)ReloadSubTotal;
+					reloadmodel.setSubTotal(calculateamount);
+					Reloadcards.add(reloadmodel);
+					totalAmount += ReloadSubTotal;
+					
+				}else if(reload_code1 == 4) {
+					ReloadModel reloadmodel = new ReloadModel();
+					
+					reloadmodel.setName("Dialog-DataCard-99");
+					System.out.print("\t\t\t=>How many Dialog-DataCard-99 do you need to purchase ?");
+					int Qty = input.nextInt();
+					reloadmodel.setQty(Qty);
+					ReloadSubTotal = reload.calculateBill(Qty, reload.reload_99);
+					double calculateamount = (double)ReloadSubTotal;
+					reloadmodel.setSubTotal(calculateamount);
+					Reloadcards.add(reloadmodel);
+					totalAmount += ReloadSubTotal;
+					
+				}else if(reload_code1 == 5) {
+					ReloadModel reloadmodel = new ReloadModel();
+					
+					reloadmodel.setName("Dialog-DataCard-199");
+					System.out.print("\t\t\t=>How many Dialog-DataCard-199 do you need to purchase ?");
+					int Qty = input.nextInt();
+					reloadmodel.setQty(Qty);
+					ReloadSubTotal = reload.calculateBill(Qty, reload.reload_199);
+					double calculateamount = (double)ReloadSubTotal;
+					reloadmodel.setSubTotal(calculateamount);
+					Reloadcards.add(reloadmodel);
+					totalAmount += ReloadSubTotal;
+					
+				}else if(reload_code1 == 6) {
+					ReloadModel reloadmodel = new ReloadModel();
+					
+					reloadmodel.setName("Dialog-DataCard-249");
+					System.out.print("\t\t\t=>How many Dialog-DataCard-249 do you need to purchase ?");
+					int Qty = input.nextInt();
+					reloadmodel.setQty(Qty);
+					ReloadSubTotal = reload.calculateBill(Qty, reload.reload_249);
+					double calculateamount = (double)ReloadSubTotal;
+					reloadmodel.setSubTotal(calculateamount);
+					Reloadcards.add(reloadmodel);
+					totalAmount += ReloadSubTotal;
+					
+				}else {
+					   System.out.println("\t\t\t=>Please enter a valied code ....");
+				}
+				
+			}else if(reload_code  == 2) {
+				
+				reload.DisplayHutchCards();;
+				System.out.println();
+				System.out.println();
+				System.out.print("\t\t\t=>Enter the code of ReloadCard Type  you need to Purchase ? ");
+				int reload_code2 = input.nextInt();
+				
+				if(reload_code2 == 1) {
+					ReloadModel reloadmodel = new ReloadModel();
+					reloadmodel.setName("Hutch-ReloadCard-50");
+					System.out.print("\t\t\t=>How many Hutch-ReloadCard-50 do you need to purchase ?");
+					int Qty = input.nextInt();
+					reloadmodel.setQty(Qty);
+					ReloadSubTotal = reload.calculateBill(Qty, reload.reload_50);
+					double calculateamount = (double)ReloadSubTotal;
+					reloadmodel.setSubTotal(calculateamount);
+					Reloadcards.add(reloadmodel);
+					totalAmount += ReloadSubTotal;
+					
+				}else if(reload_code2 == 2) {
+					ReloadModel reloadmodel = new ReloadModel();
+					reloadmodel.setName("Hutch-ReloadCard-100");
+					System.out.print("\t\t\t=>How many Hutch-ReloadCard-100 do you need to purchase ?");
+					int Qty = input.nextInt();
+					reloadmodel.setQty(Qty);
+					ReloadSubTotal = reload.calculateBill(Qty, reload.reload_100);
+					double calculateamount = (double)ReloadSubTotal;
+					reloadmodel.setSubTotal(calculateamount);
+					Reloadcards.add(reloadmodel);
+					totalAmount += ReloadSubTotal;
+					
+				}else if(reload_code2 == 3) {
+					ReloadModel reloadmodel = new ReloadModel();
+					reloadmodel.setName("Hutch-DataCard-48");
+					System.out.print("\t\t\t=>How many Hutch-DataCard-48 do you need to purchase ?");
+					int Qty = input.nextInt();
+					reloadmodel.setQty(Qty);
+					ReloadSubTotal = reload.calculateBill(Qty, reload.reload_48_hutch);
+					double calculateamount = (double)ReloadSubTotal;
+					reloadmodel.setSubTotal(calculateamount);
+					Reloadcards.add(reloadmodel);
+					totalAmount += ReloadSubTotal;
+					
+				}else if(reload_code2 == 4) {
+					ReloadModel reloadmodel = new ReloadModel();
+					reloadmodel.setName("Hutch-DataCard-99");
+					System.out.print("\t\t\t=>How many Hutch-DataCard-99 do you need to purchase ?");
+					int Qty = input.nextInt();
+					reloadmodel.setQty(Qty);
+					ReloadSubTotal = reload.calculateBill(Qty, reload.reload_99);
+					double calculateamount = (double)ReloadSubTotal;
+					reloadmodel.setSubTotal(calculateamount);
+					Reloadcards.add(reloadmodel);
+					totalAmount += ReloadSubTotal;
+					
+				}else if(reload_code2 == 5) {
+					ReloadModel reloadmodel = new ReloadModel();
+					reloadmodel.setName("Hutch-DataCard-198");
+					System.out.print("\t\t\t=>How many Hutch-DataCard-198 do you need to purchase ?");
+					int Qty = input.nextInt();
+					reloadmodel.setQty(Qty);
+					ReloadSubTotal = reload.calculateBill(Qty, reload.reload_198_hutch);
+					double calculateamount = (double)ReloadSubTotal;
+					reloadmodel.setSubTotal(calculateamount);
+					Reloadcards.add(reloadmodel);
+					totalAmount += ReloadSubTotal;
+					
+				}else if(reload_code2 == 6) {
+					ReloadModel reloadmodel = new ReloadModel();
+					reloadmodel.setName("Hutch-DataCard-649");
+					System.out.print("\t\t\t=>How many Hutch-DataCard-649 do you need to purchase ?");
+					int Qty = input.nextInt();
+					reloadmodel.setQty(Qty);
+					ReloadSubTotal = reload.calculateBill(Qty, reload.reload_649_hutch);
+					double calculateamount = (double)ReloadSubTotal;
+					reloadmodel.setSubTotal(calculateamount);
+					Reloadcards.add(reloadmodel);
+					totalAmount += ReloadSubTotal;
+					
+				}else {
+					   System.out.println("\t\t\t=>Please enter a valied code ....");
+				}
+				
+			}else if(reload_code  == 3) {
+				
+				reload.DisplayMobitelCards();
+				System.out.println();
+				System.out.println();
+				System.out.print("\t\t\t=>Enter the code of ReloadCard Type  you need to Purchase ? ");
+				int reload_code3 = input.nextInt();
+				
+				if(reload_code3 == 1) {
+					ReloadModel reloadmodel = new ReloadModel();
+				
+					reloadmodel.setName("Mobitel-ReloadCard-50");
+					System.out.print("\t\t\t=>How many Mobitel-ReloadCard-50 do you need to purchase ?");
+					int Qty = input.nextInt();
+					reloadmodel.setQty(Qty);
+					ReloadSubTotal = reload.calculateBill(Qty, reload.reload_50);
+					double calculateamount = (double)ReloadSubTotal;
+					reloadmodel.setSubTotal(calculateamount);
+					Reloadcards.add(reloadmodel);
+					totalAmount += ReloadSubTotal;
+					
+				}else if(reload_code3 == 2) {
+					ReloadModel reloadmodel = new ReloadModel();
+					
+					reloadmodel.setName("Mobitel-ReloadCard-100");
+					System.out.print("\t\t\t=>How many Mobitel-ReloadCard-100 do you need to purchase ?");
+					int Qty = input.nextInt();
+					reloadmodel.setQty(Qty);
+					ReloadSubTotal = reload.calculateBill(Qty, reload.reload_100);
+					double calculateamount = (double)ReloadSubTotal;
+					reloadmodel.setSubTotal(calculateamount);
+					Reloadcards.add(reloadmodel);
+					totalAmount += ReloadSubTotal;
+					
+				}else if(reload_code3 == 3) {
+					ReloadModel reloadmodel = new ReloadModel();
+					
+					reloadmodel.setName("Mobitel-DataCard-49");
+					System.out.print("\t\t\t=>How many Mobitel-DataCard-49 do you need to purchase ?");
+					int Qty = input.nextInt();
+					reloadmodel.setQty(Qty);
+					ReloadSubTotal = reload.calculateBill(Qty, reload.reload_49);
+					double calculateamount = (double)ReloadSubTotal;
+					reloadmodel.setSubTotal(calculateamount);
+					Reloadcards.add(reloadmodel);
+					totalAmount += ReloadSubTotal;
+					
+				}else if(reload_code3 == 4) {
+					ReloadModel reloadmodel = new ReloadModel();
+					
+					reloadmodel.setName("Mobitel-DataCard-99");
+					System.out.print("\t\t\t=>How many Mobitel-DataCard-99 do you need to purchase ?");
+					int Qty = input.nextInt();
+					reloadmodel.setQty(Qty);
+					ReloadSubTotal = reload.calculateBill(Qty, reload.reload_99);
+					double calculateamount = (double)ReloadSubTotal;
+					reloadmodel.setSubTotal(calculateamount);
+					Reloadcards.add(reloadmodel);
+					totalAmount += ReloadSubTotal;
+					
+				}else if(reload_code3 == 5) {
+					ReloadModel reloadmodel = new ReloadModel();
+					reloadmodel.setName("Mobitel-DataCard-199");
+					System.out.print("\t\t\t=>How many Mobitel-DataCard-199 do you need to purchase ?");
+					int Qty = input.nextInt();
+					reloadmodel.setQty(Qty);
+					ReloadSubTotal = reload.calculateBill(Qty, reload.reload_199);
+					double calculateamount = (double)ReloadSubTotal;
+					reloadmodel.setSubTotal(calculateamount);
+					Reloadcards.add(reloadmodel);
+					totalAmount += ReloadSubTotal;
+					
+				}else if(reload_code3 == 6) {
+					ReloadModel reloadmodel = new ReloadModel();
+					reloadmodel.setName("Mobitel-DataCard-249");
+					System.out.print("\t\t\t=>How many Mobitel-DataCard-249 do you need to purchase ?");
+					int Qty = input.nextInt();
+					reloadmodel.setQty(Qty);
+					ReloadSubTotal = reload.calculateBill(Qty, reload.reload_249);
+					double calculateamount = (double)ReloadSubTotal;
+					reloadmodel.setSubTotal(calculateamount);
+					Reloadcards.add(reloadmodel);
+					totalAmount += ReloadSubTotal;
+					
+				}else {
+					   System.out.println("\t\t\t=>Please enter a valied code ....");
+				}
+				
+			} else {
+				   System.out.println("\t\t\t=>Please enter a valied code ....");
+			   }
+			
+			System.out.println();
+			System.out.println("\t\t\t  *** Please enter [Y] if 'yes' and [N] if 'No' ***");
+			System.out.print("\t\t\t=>Do you need to perchse more items ? [Y/N] ");
+			reload_desision = input.next();
+			
+		}while(reload_desision.equals("Y"));
+		System.out.println();
+		System.out.println();
+		System.out.println("\t\t\t\tReload Service Bill Amount : ");
+		System.out.println();
+		System.out.println("\t\t\t\t__________________________________________________________");
+		System.out.println("\t\t\t\tReloadType\t\tQuantity\t\t Amount");
+		System.out.println("\t\t\t\t__________________________________________________________");
+		System.out.println();
+		
+		for(ReloadModel reloadmodel : Reloadcards ) {
+			
+				System.out.print("\t\t\t\t"+ reloadmodel.getName());
+			
+				System.out.print("\t\t"+ reloadmodel.getQty());
+			
+				System.out.print("\t\t "+ reloadmodel.getSubTotal());
+				System.out.println();
+			
+			
+			
+		}
+		
+		System.out.println();
+		System.out.println("\t\t\t\t__________________________________________________________");
+		System.out.println("\t\t\t\t\t\t\t\t   SubToatal is : "+(double)totalAmount);
+		System.out.println("\t\t\t\t__________________________________________________________");
+		System.out.println();
+		
+		Services[1] = totalAmount;
+		
+		
+		
+}
+
+}

@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: User_Service3
+Bundle-SymbolicName: User_Service3
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: user_service3.Activator
+Import-Package: com.mtit.communicationcenter,
+ labtop_repairing_service,
+ org.osgi.framework;version="1.3.0",
+ phone_repairing_service
+Bundle-RequiredExecutionEnvironment: JavaSE-11
